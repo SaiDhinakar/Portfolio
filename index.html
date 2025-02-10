@@ -3,83 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sai Dhinakar - Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <title>Interactive Portfolio</title>
+    <!-- CDN Imports -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="hero" id="home">
-        <div class="container">
-            <h1>Sai Dhinakar S</h1>
-            <p>💻 Student | Aspiring Full Stack Developer | Machine Learning Enthusiast</p>
-            <br>
-            <a href="#portfolio" class="btn">View My Work</a>
-        </div>
-    </header>
 
+    <!-- Navigation -->
+    <nav class="nav-wrapper">
+        <div class="nav-content">
+            <div class="logo"></div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title" data-aos="fade-up">
+                AI & ML Engineer<br>
+                Django Full Stack Developer
+            </h1>
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+                Transforming Complex Challenges into Intelligent Solutions
+            </p>
+        </div>
+    </section>
+
+    <!-- About Section -->
     <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p class="intro">
-                Hello! I’m a passionate student currently diving into the exciting world of Artificial Intelligence and Machine Learning. My journey in tech began with a fascination for how algorithms can solve complex problems and drive innovation.
-            </p>
-            <p>
-                As an aspiring Full Stack Developer, I enjoy creating dynamic web applications and user-friendly desktop applications using PyQt5. I believe in the power of technology to make a positive impact, and I’m constantly seeking to expand my knowledge and skills.
-            </p>
-            <p>
-                My expertise spans various programming languages and frameworks:
-            </p>
-            <ul class="skills-list">
-                <li><strong>Programming Languages:</strong> Python, JavaScript, C</li>
-                <li><strong>Web Technologies:</strong> HTML, CSS, Django, Flask</li>
-                <li><strong>GUI Development:</strong> PyQt5</li>
-                <li><strong>Databases:</strong> MongoDB, SQL, SQLite</li>
-            </ul>
-            <p>
-                I thrive on challenges and love collaborating on projects that push the boundaries of what’s possible. In the future, I aspire to work as a Machine Learning Engineer or Software Developer, contributing to groundbreaking technologies.
-            </p>
-            <img src="pic.jpg" alt="Your Name" class="profile-photo">
-        </div>
-    </section>
-    
-    
-    
-
-    <section id="portfolio" class="portfolio">
-        <h2>My Work</h2>
-        <div class="project-container">
-            <div class="project animated">
-                <img src="todo.png" alt="Project 1">
-                <div class="overlay">
-                    <h3>Todo App</h3>
-                    <p>Todo Tracker is a comprehensive task management application designed to help users organize their projects, track todos, and visualize progress.</p>
+        <div class="about-container">
+            <div class="about-image" data-aos="fade-right">
+                <img src="assets/pic.jpg" alt="Profile" class="profile-img">
+                <div class="floating-card card-1 float">
+                    <i class="fas fa-code"></i>
+                    <h4>Django Developer</h4>
+                </div>
+                <div class="floating-card card-2 float">
+                    <i class="fas fa-brain"></i>
+                    <h4>AI/ML Innovator</h4>
                 </div>
             </div>
-            <!-- <div class="project animated">
-                <img src="project2.jpg" alt="Project 2">
-                <div class="overlay">
-                    <h3>Project Title 2</h3>
-                    <p>Short description of project 2.</p>
+            <div class="about-content" data-aos="fade-left">
+                <h2>About Me</h2>
+                <p>Dedicated AI and Machine Learning enthusiast with a passion for developing intelligent web solutions. My expertise lies in bridging the gap between complex algorithmic challenges and practical, scalable applications.</p>
+                <div class="skills-grid">
+                    <div class="skill-item" data-aos="zoom-in">
+                        <h4>Core Skills</h4>
+                        <p>Python, Django, Machine Learning</p>
+                    </div>
+                    <div class="skill-item" data-aos="zoom-in" data-aos-delay="100">
+                        <h4>Web Technologies</h4>
+                        <p>Full Stack Development, RESTful APIs</p>
+                    </div>
+                    <div class="skill-item" data-aos="zoom-in" data-aos-delay="200">
+                        <h4>Data & Databases</h4>
+                        <p>SQL, MongoDB, Data Analysis</p>
+                    </div>
+                    <div class="skill-item" data-aos="zoom-in" data-aos-delay="300">
+                        <h4>Tools & Frameworks</h4>
+                        <p>TensorFlow, scikit-learn, Docker</p>
+                    </div>
                 </div>
             </div>
-            <div class="project animated">
-                <img src="project3.jpg" alt="Project 3">
-                <div class="overlay">
-                    <h3>Project Title 3</h3>
-                    <p>Short description of project 3.</p>
-                </div>
-            </div> -->
         </div>
     </section>
 
+    <!-- Projects Section -->
+<section id="projects" class="projects">
+    <div class="projects-container">
+        <h2 data-aos="fade-up">Innovative Projects</h2>
+        <div class="projects-grid">
+            <!-- Machine Learning Project -->
+            <div class="project-card" data-aos="fade-up">
+                <img src="assets/project-1.png" alt="ML Project" class="project-img">
+                <div class="project-overlay"></div>
+                <div class="project-content">
+                    <h3>Face Matching System using Dlib</h3>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Dlib</span>
+                        <span class="tag">Machine Learning</span>
+                    </div>
+                    <p class="project-description">A real-time face recognition system detects, tracks, and matches faces from a webcam feed and images. It uses dlib's face detection and recognition models to compare faces against a set of reference images.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/SaiDhinakar/Face-Matching-System" class="btn-project">Code</a>
+                    </div>
+                </div>
+            </div>
 
-    <footer class="contact" id="contact">
-        <h2>Connect with Me</h2>
-        <p>Email: <a href="#">saidhinakars899@example.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/saidhinakar-s" target="_blank">linkedin.com/in/saidhinakar-s</a></p>
-        <p>Github : <a href="https://github.com/SaiDhinakar" target="_blank">https://github.com/SaiDhinakar</a></p>
+            <div class="project-card" data-aos="fade-up">
+                <img src="assets/project-2.png" alt="ML Project" class="project-img">
+                <div class="project-overlay"></div>
+                <div class="project-content">
+                    <h3>Inventory Management</h3>
+                    <div class="project-tags">
+                        <span class="tag">HTML CSS JS</span>
+                        <span class="tag">Django</span>
+                        <span class="tag"></span>
+                    </div>
+                    <p class="project-description">A Django-powered solution for tracking stock, managing products, and generating insights with real-time monitoring and user authentication.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/SaiDhinakar/Inventory-Management" class="btn-project">Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="fade-up">
+                <img src="assets/project-3.png" alt="ML Project" class="project-img">
+                <div class="project-overlay"></div>
+                <div class="project-content">
+                    <h3>Inventory Management</h3>
+                    <div class="project-tags">
+                        <span class="tag">HTML CSS JS</span>
+                        <span class="tag">Flask</span>
+                        <span class="tag"></span>
+                    </div>
+                    <p class="project-description">Todo Tracker is a comprehensive task management application designed to help users organize their projects, track todos, and visualize progress.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/SaiDhinakar/Todo_app" class="btn-project">Code</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="social-links">
+            <a href="https://github.com/SaiDhinakar/" class="social-link" data-aos="fade-up" data-aos-delay="100">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="linkedin.com/in/saidhinakar-s" class="social-link" data-aos="fade-up" data-aos-delay="200">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="mailto:saidhinakars899@gmail.com" class="social-link" data-aos="fade-up" data-aos-delay="300">
+                <i class="fab fa-envelope"></i>
+            </a>
+        </div>
     </footer>
 
-    <script src="scripts.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Add hover effect to interactive elements
+        const links = document.querySelectorAll('a, button, .project-card');
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'scale(2)';
+                cursorFollower.style.transform = 'scale(2)';
+            });
+            
+            link.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'scale(1)';
+                cursorFollower.style.transform = 'scale(1)';
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
+        });
+
+        // Form submission handling
+        const form = document.querySelector('.contact-form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Add your form submission logic here
+            alert('Form submitted successfully!');
+            form.reset();
+        });
+
+        // Navigation background change on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav-wrapper');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(15, 15, 26, 0.95)';
+            } else {
+                nav.style.background = 'rgba(15, 15, 26, 0.8)';
+            }
+        });
+    </script>
 </body>
 </html>
