@@ -29,13 +29,13 @@ const Experience = () => {
       link: "https://drive.google.com/file/d/1sdMdBizm4TNSSoGqpbOmNTLdvG0ZJJRf/view?usp=sharing",
     },
     {
-      title: "Student Researcher",
+      title: "Student Developer",
       company: "Sri Shakthi Institute of Engineering and Technology",
       location: "Coimbatore, India",
       period: "Jan 2024 - Present",
       type: "Academic",
       description: 
-        "Developed a student attendance system with the AI/ML product team.",
+        "Developed a student attendance system with my AI/ML product team.",
 
       achievements: [
         "Built an AI-powered student attendance web application using Django.",
