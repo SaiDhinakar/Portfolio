@@ -19,13 +19,13 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com/johndoe", label: "GitHub" },
+    { icon: Github, href: "https://github.com/SaiDhinakar", label: "GitHub" },
     {
       icon: Linkedin,
-      href: "https://linkedin.com/in/johndoe",
+      href: "https://linkedin.com/in/saidhinakar-s/",
       label: "LinkedIn",
     },
-    { icon: Mail, href: "mailto:john.doe@email.com", label: "Email" },
+    { icon: Mail, href: "mailto:saidhinakars899@gmail.com", label: "Email" },
   ];
 
   const quickLinks = [
