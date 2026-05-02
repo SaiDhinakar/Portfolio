@@ -79,6 +79,24 @@ const Navbar = () => {
               </a>
             </li>
           ))}
+          <li>
+            <a
+              href="/SAI_DHINAKAR_RESUME.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                textDecoration: 'none',
+                color: '#4b5563',
+                fontSize: '0.85rem',
+                fontWeight: '500',
+                transition: 'color 0.2s',
+              }}
+              onMouseOver={(e) => e.currentTarget.style.color = '#111827'}
+              onMouseOut={(e) => e.currentTarget.style.color = '#4b5563'}
+            >
+              Resume
+            </a>
+          </li>
         </ul>
 
         {/* Hire Me / Login analogue */}
