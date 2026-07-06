@@ -1,10 +1,21 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 // Easy to edit project list
 const projectsData = [
     {
         id: '01',
+        title: 'AI Startup Validator Agent',
+        subtitle: 'Multi-Agent Startup Validation System',
+        link: 'https://github.com/SaiDhinakar/startup-validator-agent',
+        description: [
+            'Developed an autonomous multi-agent platform that transforms startup ideas into actionable technical and business execution plans.',
+        ],
+        techStack: ['Python', 'LangGraph', 'LangChain', 'FastAPI', 'Ollama', 'React', 'Docker'],
+        image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop'
+    },
+    {
+        id: '02',
         title: 'Customer Churn Prediction',
         subtitle: 'ML Pipeline',
         link: 'https://github.com/SaiDhinakar/telco-churn-ml-pipeline',
@@ -14,18 +25,6 @@ const projectsData = [
         ],
         techStack: ['Python', 'Scikit-learn', 'MLflow', 'Airflow', 'FastAPI', 'Docker'],
         image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop'
-    },
-    {
-        id: '02',
-        title: 'TechDraw',
-        subtitle: 'AI-Assisted Diagram Generator',
-        link: 'https://github.com/SaiDhinakar/TechDraw',
-        description: [
-            'Built a lightweight AI-driven tool for generating system diagrams and workflow visualizations.',
-            'Developed interactive node-based editing using React Flow with AI-assisted diagram generation.'
-        ],
-        techStack: ['React', 'React Flow', 'AI APIs'],
-        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800'
     },
     {
         id: '03',
@@ -50,11 +49,43 @@ const projectsData = [
         ],
         techStack: ['React', 'Tailwind CSS', 'FastAPI', 'Docker', 'PaddleOCR', 'SQLite3'],
         image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&q=80&w=800'
-    }
+    },
+    {
+        id: '05',
+        title: 'TechDraw',
+        subtitle: 'AI-Assisted Diagram Generator',
+        link: 'https://github.com/SaiDhinakar/TechDraw',
+        description: [
+            'Built a lightweight AI-driven tool for generating system diagrams and workflow visualizations.',
+            'Developed interactive node-based editing using React Flow with AI-assisted diagram generation.'
+        ],
+        techStack: ['React', 'React Flow', 'AI APIs'],
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800'
+    },
 ];
 
 const Projects = () => {
     const [activeIndex, setActiveIndex] = useState(0);
+    const [hasDescriptionOverflow, setHasDescriptionOverflow] = useState(false);
+    const descriptionRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        const checkOverflow = () => {
+            const element = descriptionRef.current;
+
+            if (!element) {
+                setHasDescriptionOverflow(false);
+                return;
+            }
+
+            setHasDescriptionOverflow(element.scrollHeight > element.clientHeight + 1);
+        };
+
+        checkOverflow();
+        window.addEventListener('resize', checkOverflow);
+
+        return () => window.removeEventListener('resize', checkOverflow);
+    }, [activeIndex]);
 
     return (
         <section
@@ -73,7 +104,7 @@ const Projects = () => {
                     .projects-wrapper {
                         display: flex;
                         gap: 24px;
-                        height: 600px;
+                        height: 660px;
                         width: 100%;
                         flex-direction: row;
                     }
@@ -84,6 +115,7 @@ const Projects = () => {
                         overflow: hidden;
                         cursor: pointer;
                         border: 1px solid #f1f5f9;
+                        margin-bottom: 5px;
                         transition: flex 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), 
                                     box-shadow 0.4s ease, border-color 0.4s ease;
                     }
@@ -106,22 +138,68 @@ const Projects = () => {
                         position: absolute;
                         top: 0;
                         left: 0;
-                        width: 900px; /* Fixed to prevent reflow during transition */
+                        width: 100%;
+                        max-width: 100%;
                         height: 100%;
                         display: flex;
-                        padding: 40px;
+                        padding: 40px 40px 48px;
+                        box-sizing: border-box;
                     }
                     .active-content-inner-left {
                         flex: 1;
                         display: flex;
                         flex-direction: column;
-                        padding-right: 40px;
+                        gap: 18px;
+                        min-width: 0;
+                        height: 100%;
                     }
-                    .active-content-inner-right {
-                        width: 350px;
-                        flex-shrink: 0;
+                    .project-description {
+                        position: relative;
+                        display: block;
+                        max-height: 112px;
+                        overflow: hidden;
+                        padding-right: 48px;
+                        color: #475569;
+                        font-size: 1rem;
+                        line-height: 1.6;
+                    }
+                    .project-description-text {
+                        margin: 0;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 3;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        word-break: break-word;
+                    }
+                    .project-description-more {
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                        padding-left: 24px;
+                        background: linear-gradient(90deg, rgba(255, 255, 255, 0), #ffffff 45%);
+                        color: #8b7cc8;
+                        font-size: 0.78rem;
+                        font-weight: 800;
+                        letter-spacing: 0.08em;
+                        text-transform: uppercase;
+                    }
+                    .project-image-wrap {
+                        width: 100%;
+                        max-width: 100%;
+                        align-self: stretch;
+                        height: 150px;
+                        flex: none;
                         border-radius: 16px;
                         overflow: hidden;
+                        border: 1px solid #e2e8f0;
+                        background: #f8fafc;
+                    }
+                    .project-image-wrap img {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center;
                     }
 
                     .inactive-content {
@@ -144,21 +222,22 @@ const Projects = () => {
                     }
 
                     @media (max-width: 1024px) {
-                        .active-content { width: 700px; padding: 30px; }
-                        .active-content-inner-right { width: 250px; }
+                        .active-content { padding: 30px; }
                     }
 
                     @media (max-width: 768px) {
                         .projects-wrapper {
                             flex-direction: column;
-                            height: 1100px;
+                            height: 1180px;
                         }
                         .project-card.active { flex: 4; }
                         .project-card.inactive { flex: 1; }
                         
-                        .active-content { width: 100%; height: 100%; flex-direction: column; padding: 24px; }
-                        .active-content-inner-left { padding-right: 0; flex: none; height: auto; }
-                        .active-content-inner-right { width: 100%; height: 200px; margin-top: 20px; }
+                        .active-content { width: 100%; height: 100%; flex-direction: column; padding: 24px 24px 32px; }
+                        .active-content-inner-left { flex: none; height: auto; gap: 14px; }
+                        .project-description { max-height: 96px; padding-right: 40px; }
+                        .project-description-text { -webkit-line-clamp: 2; }
+                        .project-image-wrap { height: 130px; }
                         
                         .inactive-content { flex-direction: row; padding: 0 24px; }
                         .inactive-title { margin-top: 0; margin-left: 20px; writing-mode: horizontal-tb; transform: none; }
@@ -234,11 +313,16 @@ const Projects = () => {
                                             {project.subtitle}
                                         </h4>
 
-                                        <ul style={{ paddingLeft: '20px', margin: 0, color: '#475569', fontSize: '1rem', lineHeight: 1.6, flex: 1, display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                                            {project.description.map((desc, i) => (
-                                                <li key={i}>{desc}</li>
-                                            ))}
-                                        </ul>
+                                        <div ref={isActive ? descriptionRef : null} className="project-description" style={{ paddingLeft: '20px', flex: 'none' }}>
+                                            <p className="project-description-text">
+                                                {project.description.join(' ')}
+                                            </p>
+                                            {hasDescriptionOverflow && <span className="project-description-more">...more</span>}
+                                        </div>
+
+                                        <div className="project-image-wrap">
+                                            <img src={project.image} alt={project.title} />
+                                        </div>
 
                                         <div style={{ marginTop: '30px' }}>
                                             <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '24px' }}>
@@ -283,19 +367,6 @@ const Projects = () => {
                                         </div>
                                     </div>
 
-                                    <div className="active-content-inner-right">
-                                        <img
-                                            src={project.image}
-                                            alt={project.title}
-                                            style={{
-                                                width: '100%',
-                                                height: '100%',
-                                                objectFit: 'cover',
-                                                border: '1px solid #f1f5f9',
-                                                borderRadius: '16px'
-                                            }}
-                                        />
-                                    </div>
                                 </div>
                             </div>
                         );

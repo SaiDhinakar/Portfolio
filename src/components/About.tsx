@@ -236,6 +236,11 @@ const About = () => {
                             </div>
 
                             <div style={{ marginBottom: '24px' }}>
+                                <div style={{ fontSize: '0.9rem', fontWeight: '700', color: '#1e293b', lineHeight: 1.4 }}>Intel Industrial Training</div>
+                                <div style={{ fontSize: '0.75rem', color: '#64748b', marginTop: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>OCT 2025 - DEC 2025</div>
+                            </div>
+
+                            <div style={{ marginBottom: '24px' }}>
                                 <div style={{ fontSize: '0.9rem', fontWeight: '700', color: '#1e293b', lineHeight: 1.4 }}>AI & ML Intern at Elevate Labs</div>
                                 <div style={{ fontSize: '0.75rem', color: '#64748b', marginTop: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>MAY 2025 - JUN 2025</div>
                             </div>
@@ -251,14 +256,22 @@ const About = () => {
                             <h4 style={{ fontSize: '1rem', fontWeight: '700', color: '#334155', marginBottom: '24px', letterSpacing: '0.05em' }}>EDUCATION</h4>
 
                             <div style={{ marginBottom: '24px' }}>
-                                <div style={{ fontSize: '0.9rem', fontWeight: '700', color: '#1e293b', lineHeight: 1.4 }}>B.Tech Artificial Intelligent and Machine Learning</div>
+                                <div style={{ fontSize: '0.9rem', fontWeight: '700', color: '#1e293b', lineHeight: 1.4 }}>B.Tech Artificial Intelligence and Machine Learning</div>
                                 <div style={{ fontSize: '0.75rem', color: '#64748b', marginTop: '4px' }}>Sri Shakthi Institute of Engineering and Technology</div>
                             </div>
 
+                            <h4 style={{ fontSize: '1rem', fontWeight: '700', color: '#334155', marginBottom: '24px', letterSpacing: '0.05em' }}>ORGANIZATIONS</h4>
+                            
                             <div style={{ marginBottom: '24px' }}>
                                 <div style={{ fontSize: '0.9rem', fontWeight: '700', color: '#1e293b', lineHeight: 1.4 }}>Member of <a href="https://theaiavalon.in" target="_blank" style={{ textDecoration: 'none', color: '#8b7cc8' }}>AI Avalon</a> Tech Team</div>
                                 <div style={{ fontSize: '0.75rem', color: '#64748b', marginTop: '4px' }}>Conducting Workshops, Events and Build projects</div>
                             </div>
+
+                            <div style={{ marginBottom: '24px' }}>
+                                <div style={{ fontSize: '0.9rem', fontWeight: '700', color: '#1e293b', lineHeight: 1.4 }}>Team Lead of <a href="https://theaiavalon.in" target="_blank" style={{ textDecoration: 'none', color: '#8b7cc8' }}>FALCON</a></div>
+                                <div style={{ fontSize: '0.75rem', color: '#64748b', marginTop: '4px' }}>Student product development team in our college for building real world projects</div>
+                            </div>
+
                         </div>
                         {/* Column 3: TECH STACK (Icons Only) */}
                         <div style={{ borderLeft: '2px solid #f1f5f9', paddingLeft: '20px' }}>
