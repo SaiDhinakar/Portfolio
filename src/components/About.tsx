@@ -188,6 +188,9 @@ const About = () => {
                         <p style={{ fontSize: '0.9rem', color: '#64748b', fontWeight: '600', letterSpacing: '0.02em', textTransform: 'uppercase' }}>
                             AI / ML Engineer
                         </p>
+                        <p style={{ fontSize: '0.75rem', color: '#94a3b8', fontWeight: '600', letterSpacing: '0.08em', textTransform: 'uppercase', marginTop: '6px' }}>
+                            Bangalore, India
+                        </p>
 
                         {/* Bottom Barcode Section */}
                         <div style={{ marginTop: 'auto', borderTop: '2px dashed #f1f5f9', paddingTop: '16px' }}>
@@ -231,8 +234,13 @@ const About = () => {
                             <h4 style={{ fontSize: '1rem', fontWeight: '700', color: '#334155', marginBottom: '24px', letterSpacing: '0.05em' }}>EXPERIENCE</h4>
 
                             <div style={{ marginBottom: '24px' }}>
+                                <div style={{ fontSize: '0.9rem', fontWeight: '700', color: '#1e293b', lineHeight: 1.4 }}>AI Intern at Chimera Technologies</div>
+                                <div style={{ fontSize: '0.75rem', color: '#64748b', marginTop: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>AUG 2026 - PRESENT</div>
+                            </div>
+
+                            <div style={{ marginBottom: '24px' }}>
                                 <div style={{ fontSize: '0.9rem', fontWeight: '700', color: '#1e293b', lineHeight: 1.4 }}>LLM Post Training Intern at Ethara AI</div>
-                                <div style={{ fontSize: '0.75rem', color: '#64748b', marginTop: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>FEB 2026 - PRESENT</div>
+                                <div style={{ fontSize: '0.75rem', color: '#64748b', marginTop: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>FEB 2026 - APR 2026</div>
                             </div>
 
                             <div style={{ marginBottom: '24px' }}>
@@ -268,7 +276,7 @@ const About = () => {
                             </div>
 
                             <div style={{ marginBottom: '24px' }}>
-                                <div style={{ fontSize: '0.9rem', fontWeight: '700', color: '#1e293b', lineHeight: 1.4 }}>Team Lead of <a href="https://theaiavalon.in" target="_blank" style={{ textDecoration: 'none', color: '#8b7cc8' }}>FALCON</a></div>
+                                <div style={{ fontSize: '0.9rem', fontWeight: '700', color: '#1e293b', lineHeight: 1.4 }}>Team Lead of FALCON</div>
                                 <div style={{ fontSize: '0.75rem', color: '#64748b', marginTop: '4px' }}>Student product development team in our college for building real world projects</div>
                             </div>
 
@@ -278,8 +286,9 @@ const About = () => {
                             <h4 style={{ fontSize: '1rem', fontWeight: '700', color: '#334155', marginBottom: '24px', letterSpacing: '0.05em' }}>TECH STACK</h4>
 
                             <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', maxWidth: '280px' }}>
-                                {[
+                                {([
                                     { id: 'python', name: 'Python' },
+                                    { id: 'go', name: 'Go' },
                                     { id: 'scikitlearn', name: 'Scikit-learn' },
                                     { id: 'pytorch', name: 'PyTorch' },
                                     { id: 'opencv', name: 'OpenCV' },
@@ -294,6 +303,7 @@ const About = () => {
                                     { id: 'react', name: 'React' },
                                     { id: 'tailwindcss', name: 'Tailwind CSS' },
                                     { id: 'docker', name: 'Docker' },
+                                    { id: 'amazonwebservices', name: 'AWS', src: '/aws.svg' },
                                     { id: 'git', name: 'Git' },
                                     { id: 'github', name: 'GitHub' },
                                     { id: 'linux', name: 'Linux' },
@@ -303,7 +313,7 @@ const About = () => {
                                     { id: 'mongodb', name: 'MongoDB' },
                                     { id: 'redis', name: 'Redis' },
                                     { id: 'sqlite', name: 'SQLite' }
-                                ].map((tech) => (
+                                ] as { id: string; name: string; src?: string }[]).map((tech) => (
                                     <div
                                         key={tech.id}
                                         style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}
@@ -311,7 +321,7 @@ const About = () => {
                                         onMouseLeave={() => setHoveredTech(null)}
                                     >
                                         <img
-                                            src={`https://cdn.simpleicons.org/${tech.id}`}
+                                            src={tech.src ?? `https://cdn.simpleicons.org/${tech.id}`}
                                             alt={tech.name}
                                             style={{
                                                 width: '28px',
